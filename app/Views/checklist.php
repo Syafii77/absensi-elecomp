@@ -56,10 +56,10 @@
     <div class="pagination">
         <?php if ($viewAll): ?>
             <!-- Jika dalam mode "View All", tampilkan tombol kembali ke pagination -->
-            <a href="/riwayat" class="btn btn-secondary">Back to Pagination</a>
+            <a href="/piket" class="btn btn-secondary">Back to Pagination</a>
         <?php else: ?>
             <!-- Jika tidak dalam mode "View All", tampilkan pagination dan tombol "View All" -->
-            <a href="/riwayat?view_all=1" class="btn btn-primary">View All</a>
+            <a href="/piket?view_all=1" class="btn btn-primary">View All</a>
             <?= $pager->links('presensi', 'custom') ?>
         <?php endif; ?>
     </div>
