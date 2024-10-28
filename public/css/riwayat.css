@@ -1,0 +1,122 @@
+
+           
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            font-size: 13px;
+            width: 100%;
+        }
+
+        .title{
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+      
+        p {
+            font-size: 14px;
+        }
+
+        .table-responsive{
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(19, 12, 144, 0.04);
+            
+        }
+
+       
+        thead{
+            background-color: #130C90;
+            text-align: center;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        
+        }
+        th {
+            color: white;
+            text-align: center;
+        }
+       
+
+        .form-control{
+            background-color:  rgba(19, 12, 144, 0.04);
+            font-size: 13px;
+        }
+        .pagination{
+            display:flex;
+            justify-content: right;
+            list-style-type: none;
+        }
+        .pagination a.btn {
+            margin-top: 30px;
+            padding: 8px 0;
+            font-size: 18px;
+        }
+        .pagination a.btn:hover{
+            color: rgb(0, 7, 62)
+        }
+        .page-item {
+            margin: 0 2px; /* Menambahkan jarak antar item */
+            margin-top: 12px;
+            list-style-type: none;
+        }
+       
+       .page-link {
+        display: block;
+        color: #130C90; /* Mengubah warna teks */
+        padding: 8px 18px;
+        border: 1px solid #130C90; /* Menambahkan border */
+        border-radius: 4px;
+        text-decoration: none;
+        }
+
+        .page-link:hover {
+            background-color: rgba(19, 12, 144, 0.04);; 
+            color: #130C90; 
+            border-color: #130C90; 
+        }
+
+        .page-item.active .page-link {
+            background-color: #130C90;; 
+            color: white; 
+            border-color: #130C90;; 
+        }
+       
+        .input-group{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+
+        .input-group input[type="date"]{
+            border: 1px solid #130C90;
+            border-radius: 4px  0 0 4px ;
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        .input-group button{
+            padding: 8px 14px;
+            font-size: 14px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            background-color: #130C90;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .input-group button:hover {
+            background-color: #0e086e;
+        }
+        
+         
+     
+   

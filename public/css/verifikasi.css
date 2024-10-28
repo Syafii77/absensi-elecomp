@@ -1,0 +1,126 @@
+.custom-font {
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  box-shadow: 0.1px 4px 6px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  border: 2px solid #130C90;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgba(19, 12, 144, 0.04);
+}
+
+thead {
+  background-color: #130C90;
+  text-align: center;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+  text-align: center;
+}
+
+th {
+  color: white;
+}
+
+.date-picker {
+  width: 200px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.custom-btn {
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  width: 100px; 
+}
+
+/* WFO - Hijau Tua */
+.btn-wfo {
+  background-color: #2E7D32; 
+  color: white;
+  border: none;
+}
+
+.btn-wfo:hover {
+  background-color: #256628;
+}
+
+/* WFH - Biru Tua */
+.btn-wfh {
+  background-color: #1565C0; 
+  color: white;
+  border: none;
+}
+
+.btn-wfh:hover {
+  background-color: #0D47A1; 
+}
+
+/* Izin - Kuning Tua */
+.btn-izin {
+  background-color: #FF8F00;
+  color: white;
+  border: none;
+}
+
+.btn-izin:hover {
+  background-color: #FF6F00; 
+}
+
+/* Sakit - Oranye Tua */
+.btn-sakit {
+  background-color: #D84315; 
+  color: white;
+  border: none;
+}
+
+.btn-sakit:hover {
+  background-color: #BF360C; 
+}
+
+/* Alpha - Merah Tua */
+.btn-alpha {
+  background-color: #C62828; 
+  color: white;
+  border: none;
+}
+
+.btn-alpha:hover {
+  background-color: #B71C1C; 
+}
+
+
+.button-container {
+  margin-bottom: 10px;
+}
+
+.button-container:last-child {
+  margin-bottom: 0;
+}

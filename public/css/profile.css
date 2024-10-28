@@ -1,0 +1,59 @@
+.title {
+  margin-left: 12px;
+}
+.custom-font {
+  font-family: 'Inter', sans-serif; 
+}
+.custom-btn {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold; 
+  background-color: #130C90;
+  border-radius: 8px;
+  margin: 10px 0; 
+  color: white;
+  text-decoration: none;
+}
+.custom-btn:hover {
+  background-color: #0C074F;
+}
+
+.btn-danger {
+  background-color: #c82333;
+}
+
+.btn-danger:hover {
+  background-color: #ab1e2d;
+}
+
+.bold-text {
+  font-weight: 900; 
+}
+.card {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden; 
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  font-weight: 500; 
+  font-size: 16px;
+  margin-left: 10px;
+}
+.profile .form-control {
+  padding: 15px;
+  background-color: #F6F5FB; 
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px; 
+  font-weight: bold; 
+  height: 100%; 
+  width: 100%;
+}

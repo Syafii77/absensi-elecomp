@@ -1,0 +1,55 @@
+#map, #map1{ 
+    height: 250px; 
+    margin-bottom: 20px;
+   
+}
+.box-container{
+background-color: white;
+padding: 10px;
+border-radius: 10px;
+font-size: 13px;
+max-width: 900px;
+}
+ 
+.form-control{
+    background-color:  rgba(19, 12, 144, 0.04);
+    font-size: 13px;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="date"]{
+    border: 1px solid #130C90;
+    border-radius: 4px  0 0 4px ;
+    padding: 6px;
+    font-size: 14px;
+}
+
+.input-group button{
+    padding: 8px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: #130C90;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.input-group button:hover {
+    background-color: #0e086e;
+}
+
+
+.title {
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+.info{
+margin-bottom: 20px;
+border-bottom: 1px solid #ddd;
+}
