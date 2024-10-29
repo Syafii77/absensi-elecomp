@@ -99,16 +99,7 @@
             </div>
         </div>
     </div>
-     <div class="form-1">
-        <div class="label"><label for="status">Status (WFO/WFH)</label></div>
-        <div class="input">
-            <select name="status" id="status" required>
-                <option value="">Pilih Status</option>
-                <option value="WFO">Work From Office (WFO)</option>
-                <option value="WFH">Work From Home (WFH)</option>
-            </select>
-        </div>
-    </div>
+
     <div class="form-1">
         <div class="label"><label for="status">Status (WFO/WFH)</label></div>
         <div class="input">
@@ -138,7 +129,7 @@
         </div>
     </div>
 
-    <!-- Tambahkan div untuk map -->
+    <!-- Map Section -->
     <div id="map" style="height: 325px; margin-top: 20px;"></div>
 
     <div class="btn">
@@ -159,7 +150,8 @@
     const DateNow = `${year}-${month}-${date}`;
     document.getElementById('date').value = DateNow;
     document.getElementById('time').value = TimeNow;
-    // Geolocation untuk mendapatkan posisi saat ini
+
+    // Geolocation for current position
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -175,15 +167,13 @@
         document.getElementById("latitude").value = latitude;
         document.getElementById("longitude").value = longitude;
 
-        // Inisialisasi peta
+        // Initialize map
         var map = L.map('map').setView([latitude, longitude], 13);
-
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
-        // Tambahkan marker pada lokasi saat ini
         L.marker([latitude, longitude]).addTo(map)
             .bindPopup('Lokasi Anda Saat Ini')
             .openPopup();
@@ -206,18 +196,15 @@
         }
     }
 
-    // Panggil fungsi getLocation ketika halaman dimuat
+    // Call getLocation when page loads
     window.onload = getLocation;
-</script>
 
-<!-- ======== KOMPRES FOTO ============= -->
-<script>
+    // Compress image before upload
     document.getElementById('foto').addEventListener('change', function(event) {
         const file = event.target.files[0];
 
         if (file) {
             const reader = new FileReader();
-
             reader.onload = function(e) {
                 const img = new Image();
                 img.src = e.target.result;
@@ -226,7 +213,7 @@
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
 
-                    const MAX_WIDTH = 800;  // Tentukan ukuran maksimum
+                    const MAX_WIDTH = 800;
                     const scaleSize = MAX_WIDTH / img.width;
 
                     canvas.width = MAX_WIDTH;
@@ -234,24 +221,20 @@
 
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-                    // Kompres gambar dengan kualitas 0.9
                     canvas.toBlob(function(blob) {
                         const compressedFile = new File([blob], file.name, {
                             type: file.type,
                             lastModified: Date.now()
                         });
 
-                        // Ganti file asli dengan yang terkompresi
                         const dataTransfer = new DataTransfer();
                         dataTransfer.items.add(compressedFile);
                         document.getElementById('foto').files = dataTransfer.files;
-                    }, file.type, 0.9);  // Menurunkan kualitas ke 90%
+                    }, file.type, 0.9);
                 }
             }
-
             reader.readAsDataURL(file);
         }
     });
 </script>
-
 <?= $this->endSection() ?>

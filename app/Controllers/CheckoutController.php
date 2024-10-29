@@ -49,13 +49,13 @@ class CheckoutController extends BaseController
         }
 
         // Membatasi waktu checkout
-        $jamKeluarTimestamp = strtotime($jam_keluar);
-        $batasAwal = strtotime('16:00');
-        $batasAkhir = strtotime('16:30');
+        // $jamKeluarTimestamp = strtotime($jam_keluar);
+        // $batasAwal = strtotime('16:00');
+        // $batasAkhir = strtotime('16:30');
 
-        if ($jamKeluarTimestamp < $batasAwal || $jamKeluarTimestamp > $batasAkhir) {
-            return redirect()->back()->with('error', 'Checkout hanya dapat dilakukan antara jam 16:00 hingga 16:30.');
-        }
+        // if ($jamKeluarTimestamp < $batasAwal || $jamKeluarTimestamp > $batasAkhir) {
+        //     return redirect()->back()->with('error', 'Checkout hanya dapat dilakukan antara jam 16:00 hingga 16:30.');
+        // }
 
         //cari data presensi berdasarkan tanggalnya dan id magang untuk mengupdate chekoutnya
         $tanggal = $this->request->getPost('tanggalKeluar');

@@ -53,20 +53,16 @@ public function store()
     $longitude = $this->request->getPost('longitude');
     $status = $this->request->getPost('status'); // WFO or WFH
 
-    // Pengecekan waktu check-in (misal: antara 07:30 dan 08:15)
-    $startTime = "07:30";
-    $endTime = "08:15";
-
-
-    // // Konversi waktu ke format datetime agar bisa dibandingkan
-    $checkInTime = strtotime($time);
-    $startTimeCheck = strtotime($startTime);
-    $endTimeCheck = strtotime($endTime);
-
-    //  // Tambahkan pengecekan waktu check-in
-     if ($checkInTime < $startTimeCheck || $checkInTime > $endTimeCheck) {
-        return redirect()->back()->with('error', 'Waktu check-in tidak valid. Anda hanya dapat check-in antara pukul 08:00 dan 08:15.');
-    }
+        // $startTime = "07:30";
+        // $endTime = "08:15";
+    
+        // $checkInTime = strtotime($time);
+        // $startTimeCheck = strtotime($startTime);
+        // $endTimeCheck = strtotime($endTime);
+    
+        // if ($checkInTime < $startTimeCheck || $checkInTime > $endTimeCheck) {
+        //     return redirect()->back()->with('error', 'Waktu check-in tidak valid. Anda hanya dapat check-in antara pukul 08:00 dan 08:15.');
+        // }
 
     // Check if location (latitude and longitude) is provided
     if (empty($latitude) || empty($longitude)) {
@@ -167,8 +163,7 @@ public function store()
             if ($verifikasiStatus === 'Sukses') {
                 return redirect()->to('/success-check-in')->with('success', 'Presensi berhasil disimpan.');
             } else {
-                // Handle error if the file extension is not allowed
-                return redirect()->back()->with('error', 'Format file tidak didukung. Hanya .jpg, .jpeg, dan .png yang diperbolehkan.');
+                return redirect()->to('/pending-check-in')->with('warning', 'Verifikasi sedang diproses.');
             }
         } else {
             // Handle error if the file extension is not allowed
@@ -178,7 +173,6 @@ public function store()
         // Handle error if the file is not valid
         return redirect()->back()->with('error', 'Ukuran file terlalu besar. Maksimal 1 MB.');
     }
-    
 }
 
 
