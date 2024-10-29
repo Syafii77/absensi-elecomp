@@ -34,6 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'admin' => \App\Filters\AdminFilter::class,
     ];
 
     /**
@@ -103,5 +104,17 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'admin' => [
+            'before' => [
+                '/SummaryPresensiController',
+                '/dashboardadmin',
+                '/VerifyUser',
+                '/lokasiSemua',
+                '/RekapitulasiAbsen',
+                '/HitungNilai',
+                '/user-list',
+            ]
+        ]
+    ];
 }

@@ -10,52 +10,57 @@ class AuthController extends BaseController
     {
         return view('signIn');
     }
+
     public function login()
     {
         return view('signIn');
     }
+
     public function authenticate()
     {
         $userModel = new UserModel();
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
+        // Mencari pengguna berdasarkan email
         $user = $userModel->where('email', $email)->first();
 
+        // Verifikasi kredensial
         if ($user && password_verify($password, $user['password'])) {
-            $this->setUserSession($user);
+            $this->setUserSession($user); // Menyimpan data sesi pengguna
 
-            // Check user role
+            // Check user role dan redirect
             if ($user['role'] === 'admin') {
                 return redirect()->to('/dashboardadmin');
             } else {
                 return redirect()->to('/home');
             }
         } else {
-            // Set flashdata with an error message
+            // Set flashdata dengan pesan error
             session()->setFlashdata('error', 'Email atau password salah');
             return redirect()->back();
         }
     }
 
-
     private function setUserSession($user)
     {
+        // Menyimpan data sesi
         $sessionData = [
             'user_id' => $user['id_magang'],
             'email' => $user['email'],
             'logged_in' => true,
             'role' => $user['role']
         ];
-        session()->set($sessionData);
+        session()->set($sessionData); // Menyimpan data ke dalam sesi
     }
+
     public function signUp()
     {
         return view('signUp');
     }
+
     public function tambahUser()
     {
-
         $userModel = new UserModel();
 
         if ($this->request->getMethod() == 'POST') {
@@ -82,8 +87,8 @@ class AuthController extends BaseController
                 'Nomor_telepon' => [
                     'label' => 'Nomor telepon',
                     'rules' => 'required|min_length[10]',
-                    'errors' =>[
-                        'required' =>'{field} harus diisi',
+                    'errors' => [
+                        'required' => '{field} harus diisi',
                         'min_length' => '{field} minimal 10 karakter.',
                     ] 
                 ],
@@ -101,11 +106,11 @@ class AuthController extends BaseController
                     'rules' => 'required|min_length[8]|regex_match[/(?=.*[0-9])(?=.*[\W])/]',
                     'errors' => [
                         'required' => '{field} harus diisi',
-                        'min_length' => 'Password minimal 8 karakter terdiri dari huruf, angka dan karakter spesial(@,#,!,?,dll) ',
+                        'min_length' => 'Password minimal 8 karakter terdiri dari huruf, angka dan karakter spesial(@,#,!,?,dll)',
                         'regex_match' => 'Password harus terdiri dari huruf, angka dan karakter spesial(@,#,!,?,dll).'
                     ]
                 ],
-                'alamat ' => [
+                'alamat' => [  // Menghapus spasi dari kunci ini
                     'label' => 'Alamat',
                     'rules' => 'required',
                     'errors' => '{field} harus diisi'
@@ -122,7 +127,6 @@ class AuthController extends BaseController
                     'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
                     'alamat' => $this->request->getPost('alamat'),
                     'role' => 'user',
-
                 ];
 
                 if ($userModel->save($dataUser)) {
@@ -131,7 +135,6 @@ class AuthController extends BaseController
                     $data['eror'] = 'Terjadi kesalahan saat menyimpan data';
                 }
             } else {
-               
                 $data['validation'] = $this->validator;
             }
 
@@ -140,12 +143,13 @@ class AuthController extends BaseController
             echo view('/signUp', $data);
         }
     }
+
     public function logout()
     {
-        // Destroy the session to log the user out
+        // Hapus semua session
         session()->destroy();
 
-        // Redirect to the login page
+        // Redirect ke halaman login
         return redirect()->to('/login');
     }
 }

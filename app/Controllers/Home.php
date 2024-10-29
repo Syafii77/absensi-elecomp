@@ -27,11 +27,17 @@ class Home extends BaseController
         $presensi = $presensiModel->where('id_magang', $userId)
             ->where('tanggal', $today)
             ->first();
+        
+        $now_time = date('H:i:s');
+        $piket = $presensiModel->where('id_magang', $userId)
+            ->where('tanggal', $today)
+            ->first();
 
         // Cek apakah sudah ada presensi dan apakah jam_keluar sudah terisi
         $hasPresensi = $presensi ? true : false;
         $hasCheckedOut = $presensi && $presensi['jam_keluar'] ? true : false;
         $hasCheckedin = $presensi && $presensi['jam_masuk'] ? true : false;
+        $hasPiket = $piket && $piket['jam_piket'] ? true : false;
         $isHadir = $presensi && ($presensi['status'] === 'WFO' || $presensi['status'] === 'WFH') ? true : false;
         $isPending = $presensi && $presensi['verifikasi'] === 'Pending';
 
@@ -41,6 +47,7 @@ class Home extends BaseController
             'hasPresensi' => $hasPresensi, // Cek apakah ada data presensi
             'hasCheckedOut' => $hasCheckedOut, // Cek apakah sudah check-out
             'hasCheckedin' =>$hasCheckedin,
+            'hasPiket' => $hasPiket, // Cek apakah
             'isHadir' => $isHadir, // Cek apakah status hadir
             'isPending'=>$isPending,
         ];

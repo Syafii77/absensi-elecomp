@@ -74,7 +74,7 @@
             <h1 class="card-title bold-text">Piket</h1>
             <p class="card-text bold-text">Gunakan tombol "Piket" untuk mencatat piket Anda dengan tepat.</p>
         </div>
-        <a href="/piket" class="btn btn-primary custom-btn <?= $hasCheckedin && !$hasCheckedOut && $isHadir ? '' : 'disabled-link' ?>" id="btn-checkout">Piket</a>
+        <a href="/piket" class="btn btn-primary custom-btn <?= $hasCheckedin && !$hasPiket ? '' : 'disabled-link' ?>" id="btn-checkout">Piket</a>
         <script>
             document.getElementById('btn-piket').addEventListener('click',function(event){
                 var isPending = <?= json_encode($isPending)?>;

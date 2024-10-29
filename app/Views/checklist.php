@@ -48,6 +48,7 @@
                 <th style="width: 5%">No</th>
                 <th style="width: 8%">Jam piket</th>
                 <th style="width: 45%; word-wrap: break-word;">Kegiatan Piket</th>
+                
                 </tr>
             </thead>
         </table>
