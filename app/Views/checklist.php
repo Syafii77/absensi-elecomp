@@ -37,10 +37,6 @@
         <p>Daftar riwayat piket</p>
     </div>
 
-    <div class="col-md-3 mb-2 mb-md-0">
-        <form action="/chechlist" method="get" class="input-group mb-3">
-        </form>
-    </div>
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -48,9 +44,18 @@
                 <th style="width: 5%">No</th>
                 <th style="width: 8%">Jam piket</th>
                 <th style="width: 45%; word-wrap: break-word;">Kegiatan Piket</th>
-                
                 </tr>
             </thead>
+            <tbody>
+            <?php $i = 1; ?>
+                <?php foreach ($presensi as $item) : ?>
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td><?= $item['jam_piket'] ?></td>
+                    <td><?= $item['kegiatan_piket'] ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
 

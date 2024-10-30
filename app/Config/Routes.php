@@ -32,8 +32,9 @@ $routes->get('/success-check-in', 'SuccesCheckInController::index');
 $routes->get('/pending-check-in', 'PendingCheckInController::index');
 $routes->get('/success-izin', 'SuccesIzinController::index');
 $routes->get('/success-checkout', 'SuccessCheckoutController::index');
-$routes->post('/piket-form', 'PiketController::piketForm'); // Sesuaikan dengan nama metode yang tepat
 
+$routes->post('/piket-form', 'PiketController::piketForm');
+$routes->get('/success-piket', 'PiketController::sukses_piket');
 
 $routes->get('/lokasiSemua', 'LokasiController::index',['filter' => 'admin']);
 $routes->get('/logout', 'AuthController::logout');
