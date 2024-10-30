@@ -55,7 +55,7 @@ class PiketController extends BaseController
                         return redirect()->to('/piket')->with('error', 'Gagal menyimpan data piket ke database: ' . json_encode($modelPresensi->errors()));
                     }
                 } else {
-                    return redirect()->to('/piket')->with('error', 'Presensi tidak ditemukan untuk pengguna ini.');
+                    return redirect()->to('/piket')->with('error', 'Presensi piket tidak ditemukan untuk pengguna ini, dikarenakan WFH.');
                 }
             } else {
                 return redirect()->to('/piket')->with('error', 'Gagal menyimpan foto di server.');
