@@ -52,5 +52,6 @@ $routes->get('RekapitulasiAbsen/updateStatusAlpha/(:num)', 'MarkAlphaController:
 $routes->group('', ['filter' => 'admin'], function($routes) {
     $routes->get('/summary-presensi', 'SummaryPresensiController::index');
     // Tambahkan route lainnya dari SummaryPresensiController jika ada
+    $routes->get('rekapitulasi-check-list', 'RekapitulasiCheckList::rekapitulasichecklist');
 });
 

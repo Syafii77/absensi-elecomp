@@ -9,6 +9,7 @@
         <li><a href="/SummaryPresensiController"> <i class="fa-solid fa-chart-area"></i> Statistik Absensi</a></li>
         <li><a href="/RekapitulasiAbsen"><i class="fa-solid fa-file-alt"></i> Rekapitulasi Absensi</a></li>
         <li><a href="/HitungNilai"><i class="fa-solid fa-file-invoice"></i> Rekapitulasi Penilaian</a></li>
+        <li><a href="/rekapitulasi-check-list"><i class="fa-solid fa-file-invoice"></i>Rekapitulasi Piket</a></li>
         <li><a href="/user-list"> <i class="fa-solid fa-user-group"></i> Daftar Pengguna</a></li>
     </ul>
 </aside>

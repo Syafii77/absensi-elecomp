@@ -25,5 +25,16 @@ class presensiModel extends Model{
         'verifikasi',
     ];
 
+    public function getPresensiWithUser($viewAll = false, $dataPerPage = 10)
+    {
+        // Lakukan join dengan tabel user berdasarkan id_magang
+        $this->select('presensi.*, user.Nama')
+             ->join('user', 'user.id_magang = presensi.id_magang');
 
+        if ($viewAll) {
+            return $this->findAll();
+        } else {
+            return $this->paginate($dataPerPage, 'presensi');
+        }
+    }
 }

@@ -13,6 +13,7 @@
             <li><a href="/summary-presensi"> <i class="fa-solid fa-chart-area"></i> Statistik Absensi</a></li>
             <li><a href="/RekapitulasiAbsen"><i class="fa-solid fa-file-alt"></i> Rekapitulasi Absensi</a></li>
             <li><a href="/HitungNilai"><i class="fa-solid fa-file-invoice"></i> Rekapitulasi Penilaian</a></li>
+            <li><a href="/rekapitulasi-check-list"><i class="fas fa-clock"></i>Checklist Piket</a></li>
             <li><a href="/user-list"> <i class="fa-solid fa-user-group"></i> Daftar Pengguna</a></li>
         </ul>
         <ul class="dropdown-menu" id="dropdown-menu" hidden>
