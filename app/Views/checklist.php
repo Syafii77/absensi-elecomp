@@ -33,12 +33,71 @@
 
 
     <div class="title">
-        <h2>Riwayat</h2>
-        <p>Daftar riwayat piket</p>
+        <h2>Checklis Piket</h2>
     </div>
 
     <div class="table-responsive">
-        <table class="table">
+    <!-- <p>Daftar Jadwal piket</p>
+    <table class="table">
+    <thead>
+        <tr>
+            <th style="width: 5%">No</th>
+            <th style="width: 8%">Senin</th>
+            <th style="width: 5%">Selasa</th>
+            <th style="width: 8%">Rabu</th>
+            <th style="width: 5%">Kamis</th>
+            <th style="width: 8%">Jum'at</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $i = 1;
+        ?>
+        <tr>
+            <td><?php echo $i++; ?></td>
+            <td>Jeje</td>
+            <td>Anik</td>
+            <td>Yasmin</td>
+            <td>Isna</td>
+            <td>Diana</td>
+        </tr>
+        <tr>
+            <td><?php echo $i++; ?></td>
+            <td>Yosa</td>
+            <td>Bintang</td>
+            <td>Rafqi</td>
+            <td>Sigit</td>
+            <td>Rayhan</td>
+        </tr>
+        <tr>
+            <td><?php echo $i++; ?></td>
+            <td>Bayu</td>
+            <td>Naufal</td>
+            <td>Tegar</td>
+            <td>Daffa</td>
+            <td>Tio</td>
+        </tr>
+        <tr>
+            <td><?php echo $i++; ?></td>
+            <td>Rudi</td>
+            <td>Dhika</td>
+            <td>Rio</td>
+            <td>Bryan</td>
+            <td>Imam</td>
+        </tr>
+        <tr>
+            <td><?php echo $i++; ?></td>
+            <td>Herlambang</td>
+            <td>Afi</td>
+            <td>Ridho</td>
+            <td>Davin</td>
+            <td>Doni</td>
+        </tr>
+        <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+    <!-- </tbody> -->
+<!-- </table> -->
+        <div><table class="table">
+        <p>Daftar riwayat piket</p>
             <thead>
                 <tr>
                 <th style="width: 5%">No</th>
@@ -56,7 +115,7 @@
                 </tr>
                 <?php endforeach; ?>
             </tbody>
-        </table>
+        </table></div>
     </div>
 
     <div class="pagination">
