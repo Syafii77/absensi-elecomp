@@ -64,17 +64,17 @@
     </div>
 <?php endif; ?>
 <div class="alert-custom">
-    <h4 class="alert-heading">Ketentuan Umum Check-In (WFH dan WFO)</h4>
+    <h4 class="alert-heading">Ketentuan Umum Check-In</h4>
     <p>Pastikan check-in Anda memenuhi kriteria berikut:</p>
 
-    <strong>Untuk WFH (Work From Home):</strong>
+    <!-- <strong>Untuk WFH (Work From Home):</strong>
     <ul>
         <li>Sudah mendapatkan izin WFH dari atasan melalui grup.</li>
         <li>Foto harus menyertakan watermark.</li>
         <li>Foto bukti harus relevan dengan alasan WFH (misalnya foto bersama dosen atau foto dengan kegiatan).</li>
-    </ul>
+    </ul> -->
 
-    <strong>Untuk WFO (Work From Office) dan WFH:</strong>
+    <strong>Untuk WFO (Work From Office) :</strong>
     <ul>
         <li>Foto harus diambil dalam mode potret.</li>
         <li>Foto harus berupa selfie muka diri sendiri.</li>
@@ -101,19 +101,19 @@
     </div>
 
     <div class="form-1">
-        <div class="label"><label for="status">Status (WFO/WFH)</label></div>
+        <div class="label"><label for="status">Status</label></div>
         <div class="input">
             <select name="status" id="status" required>
                 <option value="">Pilih Status</option>
                 <option value="WFO">Work From Office (WFO)</option>
-                <option value="WFH">Work From Home (WFH)</option>
+                <!-- <option value="WFH">Work From Home (WFH)</option> -->
             </select>
         </div>
     </div>
     <div class="form-1">
         <div class="label"><label for="foto">Upload Foto Check In</label></div>
         <div class="input">
-           <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png" required >
+        <input type="file" name="foto" id="foto" accept="image/*" capture="user/environment" required>
         </div>
     </div>
     <div class="form-1" hidden>
