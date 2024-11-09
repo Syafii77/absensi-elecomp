@@ -113,9 +113,18 @@
     <div class="form-1">
         <div class="label"><label for="foto">Upload Foto Check In</label></div>
         <div class="input">
-        <input type="file" name="foto" id="foto" accept="image/*" capture="user/environment" required>
+           <input type="file" name="foto" id="foto" accept=".jpg, .jpeg, .png" required >
         </div>
     </div>
+
+    <!-- <div class="form-1">
+        <div class="label"><label for="foto">Upload Foto Check In</label></div>
+        <div class="input">
+        <input type="file" name="foto" id="foto" accept="image/*" capture="user/environment" required>
+        </div>
+    </div> -->
+
+
     <div class="form-1" hidden>
         <div class="label"><label for="latitude">Latitude</label></div>
         <div class="input">

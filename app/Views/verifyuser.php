@@ -78,13 +78,13 @@
             WFO
             </a>
         </div>
-    <div class="button-container">
+    <!-- <div class="button-container">
         <a href="<?= site_url('verifyuser/updateVerifikasi/' . $v['id_presensi'] . '/WFH'); ?>" 
            class="btn custom-btn btn-wfh" 
            onclick="return confirm('Apakah Anda yakin ingin mengupdate status menjadi Work From Home?');">
            WFH
         </a>
-    </div>
+    </div> -->
     <div class="button-container">
         <a href="<?= site_url('verifyuser/updateVerifikasi/' . $v['id_presensi'] . '/Izin'); ?>" 
            class="btn custom-btn btn-izin" 
