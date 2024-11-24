@@ -53,16 +53,16 @@ public function store()
     $longitude = $this->request->getPost('longitude');
     $status = $this->request->getPost('status'); // WFO or WFH
 
-        $startTime = "07:30";
-        $endTime = "08:15";
+        // $startTime = "07:30";
+        // $endTime = "08:15";
     
-        $checkInTime = strtotime($time);
-        $startTimeCheck = strtotime($startTime);
-        $endTimeCheck = strtotime($endTime);
+        // $checkInTime = strtotime($time);
+        // $startTimeCheck = strtotime($startTime);
+        // $endTimeCheck = strtotime($endTime);
     
-        if ($checkInTime < $startTimeCheck || $checkInTime > $endTimeCheck) {
-            return redirect()->back()->with('error', 'Waktu check-in hanya dapat dilakukan pada pukul 07:30-08:15. Selebihnya hubungi Adminya!');
-        }
+        // if ($checkInTime < $startTimeCheck || $checkInTime > $endTimeCheck) {
+        //     return redirect()->back()->with('error', 'Waktu check-in hanya dapat dilakukan pada pukul 07:30-08:15. Selebihnya hubungi Adminya!');
+        // }
 
     // Check if location (latitude and longitude) is provided
     if (empty($latitude) || empty($longitude)) {

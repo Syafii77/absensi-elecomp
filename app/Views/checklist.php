@@ -124,7 +124,6 @@
             <a href="/piket" class="btn btn-secondary">Back to Pagination</a>
         <?php else: ?>
             <!-- Jika tidak dalam mode "View All", tampilkan pagination dan tombol "View All" -->
-            <a href="/piket?view_all=1" class="btn btn-primary">View All</a>
             <?= $pager->links('presensi', 'custom') ?>
         <?php endif; ?>
     </div>

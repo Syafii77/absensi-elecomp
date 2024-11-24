@@ -16,8 +16,8 @@ class RekapitulasiChecklist extends BaseController
         $viewAll = $this->request->getGet('view_all');
 
         // Ambil data presensi dan Nama berdasarkan viewAll atau pagination
-        $dataPerPage = 10;
-        $data['presensi'] = $modelPresensi->getPresensiWithUser($viewAll, $dataPerPage);
+        $dataPerPage = 5;
+        $data['presensi'] = $modelPresensi->orderBy('tanggal', 'DESC')->orderBy('jam_piket', 'DESC')->getPresensiWithUser($viewAll, $dataPerPage);
         $data['pager'] = $viewAll ? null : $modelPresensi->pager;
 
         $data['title'] = 'Rekapitulasi Checklist';
